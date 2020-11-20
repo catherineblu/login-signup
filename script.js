@@ -19,7 +19,17 @@ function checkInputs(){
     if(usernameValue === ''){
         //show error
         //add error class
+        setErrorFor(username, 'Username cannot be blank');
     }else{
         //success
+        setSuccessFor(username);
     }
+}
+function setErrorFor(input, message){
+    const formControl = input.parentElement; //form control div
+    const small = formControl.querySelector('small');
+    small.innerText = message;
+    //add error class
+
+    formControl.className = 'form-control error';
 }
