@@ -24,6 +24,9 @@ function checkInputs(){
         //success
         setSuccessFor(username);
     }
+    if(emailValue === ''){
+        setErrorFor(email, 'You cannot leave this field blank');
+    }
 }
 function setErrorFor(input, message){
     const formControl = input.parentElement; //form control div
@@ -32,4 +35,9 @@ function setErrorFor(input, message){
     //add error class
 
     formControl.className = 'form-control error';
+}
+function setSuccessFor(input){
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+
 }
